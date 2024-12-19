@@ -8,7 +8,6 @@ public class PascalTriangle {
     public static void main(String[] args) {
         generate(5);
     }
-
     private static void generate(int n) {
         List<List<Integer>> ans = new ArrayList<>();
         List<Integer> firstRow = new ArrayList<>();
