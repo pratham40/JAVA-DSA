@@ -13,7 +13,7 @@ public class Fibonacci {
         return fib(n-1)+fib(n-2);
     }
 
-//    DP
+//    DP -> Memoization
 
     static int fib1(int n ,int[] dp){
         if (n==0 || n ==1){
@@ -32,14 +32,21 @@ public class Fibonacci {
 
     public static void main(String[] args) {
         int n = 5;
-        System.out.println("fib(5) = " + fib(n));
+//        System.out.println("fib(5) = " + fib(n));
 //        System.out.println("count = " + count);
 
         int[] dp = new int[n+1];
-        Arrays.fill(dp,Integer.MAX_VALUE);
 
-        System.out.println("fib1(n,dp) = " + fib1(n,dp));
-        System.out.println("count = " + count);
+        dp[1]=1;
+        dp[2]=1;
+        for (int i = 3; i <=n ; i++) {
+            dp[i]=dp[i-1]+dp[i-2];
+        }
+
+        System.out.println(dp[n]);
+
+//        System.out.println("fib1(n,dp) = " + fib1(n,dp));
+//        System.out.println("count = " + count);
 
     }
 }
